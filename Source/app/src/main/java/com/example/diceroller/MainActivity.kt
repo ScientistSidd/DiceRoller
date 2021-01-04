@@ -1,5 +1,6 @@
 package com.example.diceroller
 
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,6 +10,7 @@ import android.widget.Toast
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
+    lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "ready to roll", Toast.LENGTH_SHORT).show()
                 rollingDice()
     }
+        diceImage = findViewById(R.id.dice_imageno)
     }
 
     private fun rollingDice() {
@@ -32,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        val diceImage: ImageView = findViewById(R.id.dice_imageno)
+
         diceImage.setImageResource(drawableResource)
 
     }
